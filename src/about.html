@@ -1,18 +1,44 @@
 <!doctype html>
 <html lang="ru">
   <head>
-    ...
-    <!-- Скопируйте весь блок <head> из index.html -->
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Главная - ZyuWeb</title>
+      <meta
+        name="description"
+        content="Краткое описание главной страницы вашего сайта"
+      />
+      <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="../styles/styles.css" />
+    </head>
     <title>О нас - Название вашего сайта</title>
     <meta
       name="description"
       content="Узнайте больше о нашей компании и истории"
     />
+    <link rel="stylesheet" href="../styles/styles.css" />
   </head>
   <body>
-    <header>
-      ...
-      <!-- Скопируйте весь блок <header> из index.html -->
+    <header class="site-header">
+      <a class="site-header__brand" href="http://127.0.0.1:3000/src/index.html"
+        >Лого</a
+      >
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="about.html">О нас</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link-- cta" href="contacts.html"
+              >Связаться</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
       <!-- Простые "хлебные крошки" -->
