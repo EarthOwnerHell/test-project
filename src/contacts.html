@@ -15,7 +15,26 @@
     />
     <link rel="stylesheet" href="../styles/styles.css" />
   </head>
-  <body>
+  <body class="hero">
+    <button class="theme-toggle" type="button" aria-pressed="false">
+      Тема
+    </button>
+    <script defer>
+      const KEY = "theme",
+        btn = document.querySelector(".theme-toggle");
+      const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+      if (
+        localStorage.getItem(KEY) === "dark" ||
+        (!localStorage.getItem(KEY) && prefersDark)
+      ) {
+        document.body.classList.add("theme-dark");
+      }
+      btn?.addEventListener("click", () => {
+        const isDark = document.body.classList.toggle("theme-dark");
+        btn.setAttribute("aria-pressed", String(isDark));
+        localStorage.setItem(KEY, isDark ? "dark" : "light");
+      });
+    </script>
     <header class="site-header">
       <a class="site-header__brand" href="http://127.0.0.1:3000/src/index.html"
         >Лого</a
@@ -39,19 +58,25 @@
     <main>
       <nav aria-label="Хлебные крошки">
         <a href="index.html">Главная</a> →
-        <span>О нас</span>
+        <span>Контакты</span>
       </nav>
       <h1>Контакты</h1>
       <section>
-        <h2>+7 909 811 92 01</h2>
+        <span>
+          <a href="tel:+79098119201">+7 909 811 92 01</a>
+        </span>
         <p>Сис. Админ</p>
       </section>
       <section>
-        <h2>+7 984 123 45 32</h2>
+        <span>
+          <a href="tel:+79841234532">+7 984 123 45 32</a>
+        </span>
         <p>Уборщица</p>
       </section>
       <section>
-        <h2>+7 901 125 31 28</h2>
+        <span>
+          <a href="tel:+79011253128<">+7 901 125 31 28</a>
+        </span>
         <p>Ночной сторож</p>
       </section>
       <section>
@@ -110,9 +135,12 @@
         </form>
       </dialog>
     </main>
-    <footer>
+    <footer class="contacts__footer">
       <p>&copy; 2023 ZyuWeb. Все права защищены.</p>
-      <p>Телефон: +7 (123) 456-78-90</p>
+      <span
+        >Телефон
+        <a href="tel:+71234567890">+7 (123) 456-78-90</a>
+      </span>
     </footer>
   </body>
 </html>

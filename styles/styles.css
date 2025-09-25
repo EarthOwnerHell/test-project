@@ -158,6 +158,9 @@ body {
 .site-nav__link {
   color: var(--color-fg);
 }
+.site-nav__item {
+  list-style-type: none;
+}
 [aria-invalid="true"] {
   border-color: #b00020;
 }
@@ -177,17 +180,6 @@ body.theme-dark {
   color-scheme: dark;
 } /* Тёмные — при активной теме */
 /* Герой-секция: затемняющий градиент поверх фонового изображения */
-.hero {
-  background-image: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.55),
-      rgba(0, 0, 0, 0.15)
-    ),
-    image-set(url("../assets/hero.jpg") 1x, url("../assets/hero.jpg") 2x);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 .card__img {
   width: 100%;
@@ -209,4 +201,15 @@ body.theme-dark {
   height: 100%;
   border: 0;
   border-radius: var(--radius);
+}
+.about__footer {
+  margin-top: 500px;
+}
+
+.contacts__footer {
+  margin-top: 100px;
+}
+
+.telephone__span {
+  font-weight: bold;
 }
